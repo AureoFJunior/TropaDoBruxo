@@ -83,3 +83,34 @@ nav a:first-of-type {
   }
 }
 </style>
+
+<script setup lang="ts">
+  export default {
+    GetData() {
+      return {
+        apiData: null,
+      };
+    }.
+    methods: {
+      async fetchData() {
+        try
+        {
+          let response = await fetch('URL');
+          if(response.ok)
+          {
+            const data = await response.json();
+            this.apiData = data;
+          }
+          else
+          {
+            console.error('ficou de xereca por: ', error);
+          }
+        } 
+        catch (error)
+        {
+          console.error('ficou de xereca por: ', error);
+        }
+      }
+    }
+  }
+</script>
