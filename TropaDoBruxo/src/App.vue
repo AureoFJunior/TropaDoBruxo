@@ -8,8 +8,6 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -83,34 +81,3 @@ nav a:first-of-type {
   }
 }
 </style>
-
-<script setup lang="ts">
-  export default {
-    GetData() {
-      return {
-        apiData: null,
-      };
-    }.
-    methods: {
-      async fetchData() {
-        try
-        {
-          let response = await fetch('URL');
-          if(response.ok)
-          {
-            const data = await response.json();
-            this.apiData = data;
-          }
-          else
-          {
-            console.error('ficou de xereca por: ', error);
-          }
-        } 
-        catch (error)
-        {
-          console.error('ficou de xereca por: ', error);
-        }
-      }
-    }
-  }
-</script>
